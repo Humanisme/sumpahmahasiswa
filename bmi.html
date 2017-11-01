@@ -1,0 +1,16 @@
+height = params['height'].to_f
+weight = params['weight'].to_f
+bmi = weight * 10000.0 / (height * height)
+health = if(bmi < 18.5)
+        'underweight'
+    elsif (bmi < 24.9) 
+        'normal'
+    elsif (bmi < 30) 
+        'Overweight'
+    elsif (bmi >= 30)
+        'Obese'
+    end
+{
+  :health => health,
+  :bmi => bmi.round(2)
+}
